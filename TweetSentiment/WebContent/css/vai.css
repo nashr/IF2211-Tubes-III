@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+
+body, html {
+	height:100%;
+	overflow:hidden;
+}
+
+h1 {
+	margin:0;
+	padding:0;
+}
+
+h1#title {
+	color:white;
+	margin:auto;
+	width:14em;
+}
+
+div {
+	height:100%;
+	-webkit-transition: -webkit-transform 2s ease-in-out;
+            transition:         transform 2s ease-in-out;
+}
+
+div#beranda {
+	background:blue;
+	-webkit-transition:-webkit-transform 2s;
+	        transition:        transform 2s;
+}
+
+a[id="beranda"]:target ~ div {
+    -webkit-transform:translateY(0);
+            transform:translateY(0);
+}
+
+a[id="borang"]:target ~ div {
+    -webkit-transform:translateY(-703px);
+            transform:translateY(-703px);
+}
