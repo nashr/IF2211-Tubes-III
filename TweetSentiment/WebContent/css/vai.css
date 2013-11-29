@@ -11,21 +11,37 @@ h1 {
 }
 
 h1#title {
-	color:white;
-	margin:auto;
-	width:14em;
+	font-weight:bold;
+	padding-top:20%;
+	text-align:center;
 }
 
-div {
+p {
+	text-align:center;
+}
+
+p#button {
+	padding-top:4em;
+}
+
+a.btn {
+	border-radius:0.25em;
+	font-size:2em;
+}
+
+p#subtitle {
+	font-weight:bold;
+}
+
+div#beranda, div#borang {
 	height:100%;
-	-webkit-transition: -webkit-transform 2s ease-in-out;
-            transition:         transform 2s ease-in-out;
+	-webkit-transition: -webkit-transform 1.5s ease-in-out;
+            transition:         transform 1.5s ease-in-out;
 }
 
 div#beranda {
-	background:blue;
-	-webkit-transition:-webkit-transform 2s;
-	        transition:        transform 2s;
+	background:#55ACEE;
+	color:#f5f8fa;
 }
 
 a[id="beranda"]:target ~ div {
@@ -36,4 +52,9 @@ a[id="beranda"]:target ~ div {
 a[id="borang"]:target ~ div {
     -webkit-transform:translateY(-703px);
             transform:translateY(-703px);
+}
+
+footer {
+	margin-top:14%;
+	text-align:center;
 }

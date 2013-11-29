@@ -17,9 +17,13 @@
 		<div class="container-fluid" id="beranda">
 			<div class="hero-unit">
 				<h1 id="title">Vai's Group Sentiment Analytics</h1>
-				<p>Tweets analyzer that shows you how they feel.</p>
-				<p><a class="btn btn-primary btn-large" href="#borang">Analyze Now!</a></p>
+				<p id="subtitle">Tweets analyzer that shows you how they feel.</p>
+				<p id="button"><a class="btn btn-primary btn-large" href="#borang">Analyze Now!</a></p>
 			</div>
+			<footer>
+				<p><b>Copyright by Vai's Group 2013</b></p>
+				<p>Baharudin Afif Suryanugraha - 13511021 | Mohamad Rivai Ramandhani - 13511043 | Muhammad Nassirudin - 13511044</p>
+			</footer>
 		</div>
 		<div class="container-fluid" id="borang">
 			<div class="hero-unit">
