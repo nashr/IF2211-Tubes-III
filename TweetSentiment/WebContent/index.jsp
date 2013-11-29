@@ -84,6 +84,14 @@
 					    	<button id="singlebutton" name="find" class="btn btn-primary">Find them!</button>
 						</div>
 					</div>
+					
+					<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">File Button</label>
+  <div class="col-md-4">
+    <input id="filebutton" name="filebutton" class="input-file" type="file">
+  </div>
+</div>
 				</fieldset>
 			</form>
 		</div>
