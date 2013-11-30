@@ -8,8 +8,8 @@
 		
 		<!-- Bootstrap's template -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/vai.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="css/vai.css" rel="stylesheet"/>
 	</head>
 	<body>
 		<a id="perihal"></a>
@@ -29,7 +29,7 @@
 			<legend id="header">
 				<a id="about" href="#perihal">About Us</a>
 			</legend>
-			<form class="form-horizontal">
+			<form class="form-horizontal" action="home" method="post" enctype="multipart/form-data">
 				<fieldset>
 					<!-- Form Name -->
 					<legend id="formtitle">How do they feel today?</legend>
@@ -38,7 +38,7 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="textinput">Tweet</label>  
  							<div class="col-md-5">
- 								<input id="textinput" name="tweet" placeholder="lulusan informatika ITB" class="form-control input-md" type="text">
+ 								<input id="textinput" name="query" placeholder="lulusan informatika ITB" class="form-control input-md" type="text">
    						</div>
 					</div>
 
@@ -46,7 +46,8 @@
 					<div class="form-group">
 			  			<label class="col-md-4 control-label" for="textinput">Positive Sentiment</label>  
 			  			<div class="col-md-5">
-			  				<input id="textinput" name="pos" placeholder="keren hebat jago" class="form-control input-md" type="text">
+			  				<input id="textinput" name="positive" placeholder="keren ; hebat ; jago" class="form-control input-md" type="text"><br>
+			  				<input type="file" accept=".txt" name="posfile"><br>
 			    		</div>
 					</div>
 			
@@ -54,7 +55,8 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="textinput">Negative Sentiment</label>  
 						<div class="col-md-5">
-							<input id="textinput" name="neg" placeholder="sombong aneh" class="form-control input-md" type="text">
+							<input id="textinput" name="negative" placeholder="sombong ; aneh" class="form-control input-md" type="text"><br>
+							<input type="file" name="negfile"><br>
 						</div>
 					</div>
 			
@@ -64,13 +66,13 @@
 						<div class="col-md-4">
 							<div class="radio">
 								<label for="radios-0">
-							    	<input name="algo" id="radios-0" value="1" checked="checked" type="radio">
+							    	<input name="algorithm" id="radios-0" value="BM" checked="checked" type="radio">
 							     	Boyer-Moore
 							   </label>
 							</div>
 							<div class="radio">
 								<label for="radios-1">
-							    	<input name="algo" id="radios-1" value="2" type="radio">
+							    	<input name="algorithm" id="radios-1" value="KMP" type="radio">
 							    	KMP
 								</label>
 							</div>
