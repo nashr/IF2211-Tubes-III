@@ -1,0 +1,96 @@
+@CHARSET "ISO-8859-1";
+
+body, html {
+	height:100%;
+	overflow:hidden;
+}
+
+legend {
+	clear:both;
+}
+
+legend#header {
+	background:#55ACEE;
+	color:#f5f8fa;
+	font-size:2em;
+	min-height:4em;
+	padding-top:2em;
+	padding-right:2em;
+	text-align:right;
+}
+
+a#about {
+	color:#f5f8fa;
+}
+
+a#about:hover {
+	color:#428bca;
+	text-decoration:none;
+}
+
+legend#formtitle {
+	font-size:2em;
+	margin-top:2em;
+	margin-left:9em;
+	margin-bottom:1em;
+	width:57%;
+}
+
+h1 {
+	margin:0;
+	padding:0;
+}
+
+h1#title {
+	font-size:4em;
+	font-weight:bold;
+	padding-top:15%;
+	text-align:center;
+}
+
+p {
+	text-align:center;
+}
+
+p#button {
+	padding-top:4em;
+}
+
+a#main-btn {
+	border-radius:0.25em;
+	font-size:2em;
+}
+
+p#subtitle {
+	font-size:1.5em;
+}
+
+div#perihal, div#borang {
+	height:100%;
+	-webkit-transition: -webkit-transform 1.5s ease-in-out;
+            transition:         transform 1.5s ease-in-out;
+}
+
+div#perihal {
+	background:#55ACEE;
+	color:#f5f8fa;
+}
+
+div#borang {
+	background:#f5f8fa;
+}
+
+a[id="perihal"]:target ~ div {
+    -webkit-transform:translateY(0);
+            transform:translateY(0);
+}
+
+a[id="borang"]:target ~ div {
+    -webkit-transform:translateY(-703px);
+            transform:translateY(-703px);
+}
+
+footer {
+	margin-top:14%;
+	text-align:center;
+}
