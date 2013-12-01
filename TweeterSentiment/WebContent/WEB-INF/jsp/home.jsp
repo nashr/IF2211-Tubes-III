@@ -156,6 +156,7 @@
 				<thead>
 					<tr>						
 						<th>#</th>
+						<th>Sentiment</th>
 						<th>Twitter ID</th>
 						<th>Tweet</th>
 						</tr>				 
@@ -205,6 +206,7 @@
             		//print user profile picture
             		out.print("<tr>");
             		out.print("	<th>"+totalTweet+"</th>");
+            		out.print("<th>Positif</th>");
             		out.print("<th> <img src="+ tweet.getUser().getProfileImageURL().toString() +" alt=\"Default\" width=\"50\" height=\"50\"> @"+tweet.getUser().getScreenName()+"</th>");
             		out.print("<th><a href=\""+ tweetURL + "\">"+ tweet.getText()+"</a></th></tr>");            							
                 	//out.println("<img src="+ tweet.getUser().getProfileImageURL().toString() +" alt=\"Default\" width=\"50\" height=\"50\">");
@@ -235,6 +237,7 @@
                 	
             		out.print("<tr>");
             		out.print("	<th>"+totalTweet+"</th>");
+            		out.print("<th>Negatif</th>");
             		out.print("<th> <img src="+ tweet.getUser().getProfileImageURL().toString() +" alt=\"Default\" width=\"50\" height=\"50\"> @"+tweet.getUser().getScreenName()+"</th>");
             		out.print("<th><a href=\""+ tweetURL + "\">"+ tweet.getText()+"</a></th></tr>");
             		
@@ -267,6 +270,7 @@
                 	totalTweet++;
             		out.print("<tr>");
             		out.print("<th>"+totalTweet+"</th>");
+            		out.print("<th>Netral</th>");            		
             		out.print("<th> <img src="+ tweet.getUser().getProfileImageURL().toString() +" alt=\"Default\" width=\"50\" height=\"50\"> @"+tweet.getUser().getScreenName()+"</th>");
             	   	out.print("<th><a href=\""+ tweetURL + "\">"+ tweet.getText()+"</a></th></tr>");
 //             		//print user profile picture
