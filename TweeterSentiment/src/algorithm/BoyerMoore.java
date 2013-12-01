@@ -26,8 +26,8 @@ public class BoyerMoore {
 		
 		if (p > t) return -1; // pattern longer than text, must be not matched
 		
-		int i = t-1; // for index usage of text
 		int j = p-1; // for index usage of pattern
+		int i = j; // for index usage of text
 		do {
 			if (pattern.charAt(j) == text.charAt(i)) { // looking-glass technique
 				if (j == 0) return i; // match
@@ -44,7 +44,7 @@ public class BoyerMoore {
 	}
 	
 	/*
-	 * Run Boyer-Moore Algorithm for each sentiment, returning the category it is in: negative, neutral, positive
+	 * Run Boyer-Moore Algorithm for each sentiment, returning the category it belongs to: negative, neutral, positive
 	 */
 	public static String runBM(String tweet, String[] pos, String[] neg) {
 		for (int i = 0; i < pos.length; i++) {
