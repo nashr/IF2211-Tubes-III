@@ -1,4 +1,4 @@
-package beans;
+package algorithm;
 
 import java.awt.image.SampleModel;
 import java.io.ObjectInputStream.GetField;
@@ -32,7 +32,7 @@ public class KMP {
 		return prefixDummy;
 	}
 	
-	public static void run(String tweet, String pattern){
+	public static int run(String tweet, String pattern){
 		KMP kmp = new KMP();
 		ArrayList<Integer> prefix=new ArrayList<Integer>();
 		prefix=kmp.prefixFunction(pattern,tweet);
@@ -72,9 +72,24 @@ public class KMP {
 			idxAwal=-1;
 		}
 		System.out.println("Indeks Ketemu Awal ="+idxAwal);
+		return idxAwal;
 	}
 
-	public static void main(String args[]) {
-		KMP.run(SampleTweet,SamplePattern);	
+	public static String runKMP(String tweet, String[] pos, String[] neg) {
+		for (int i = 0; i < pos.length; i++) {
+			if (!pos[i].equals("")) {
+				if (run(tweet, pos[i].toLowerCase()) != -1) return "Positive";
+			}
+		}
+		for (int i = 0; i < neg.length; i++) {
+			if (!neg[i].equals("")) {
+				if (run(tweet, neg[i].toLowerCase()) != -1) return "Negative";
+			}
+		}
+		return "Neutral";
 	}
+	
+	/*public static void main(String args[]) {
+		KMP.run(SampleTweet,SamplePattern);	
+	}*/
 }

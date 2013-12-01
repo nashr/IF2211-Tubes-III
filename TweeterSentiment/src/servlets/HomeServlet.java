@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import algorithm.BoyerMoore;
+import algorithm.KMP;
 
 /**
  * Servlet implementation class HomeServlet
@@ -58,7 +59,7 @@ public class HomeServlet extends HttpServlet {
 		if (algorithm.equals("BM")) {
 			return BoyerMoore.runBM(tweet, pWords, nWords);
 		} else {
-			return "KMP";
+			return KMP.runKMP(tweet, pWords, nWords);
 		}
 	}
 	
