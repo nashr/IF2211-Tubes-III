@@ -62,6 +62,7 @@
     	String qString = request.getParameter("query") == null ? "" : request.getParameter("query");
     	String pString = request.getParameter("positive") == null ? "" : request.getParameter("positive");
     	String nString = request.getParameter("negative") == null ? "" : request.getParameter("negative");
+    	String algo = request.getParameter("algorithm") == null ? "BM" : request.getParameter("algorithm");
     	
     	//append keywords entries from file input into textfield input
     	if (posPart != null){
@@ -115,7 +116,7 @@
             	if (i != nWords.length-1) out.print(", ");
             }
             out.println("</p>");
-            out.println("<p>Algorithm : " + (request.getParameter("algorithm") == null ? "" : request.getParameter("algorithm"))  + "</p>");
+            out.println("<p>Algorithm : " + algo  + "</p>");
             
             //Determine sentiment for each tweets and populate them into appropiate list based on their sentiment
             ArrayList<Status> posTweets = new ArrayList<Status>();
@@ -128,7 +129,7 @@
             		if (j >= tweets.size()) break;
                 	tweet = tweets.get(j);
             		//Analyze tweet's sentiment
-                    sentiment = HomeServlet.validateSentiment(tweet.getText().toLowerCase(), pWords, nWords);
+                    sentiment = HomeServlet.validateSentiment(tweet.getText().toLowerCase(), pWords, nWords, algo);
             		if (sentiment.toLowerCase().equals("positive")) {
             			posTweets.add(tweet);
             		} else if (sentiment.toLowerCase().equals("negative")) {

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import algorithm.BoyerMoore;
+
 /**
  * Servlet implementation class HomeServlet
  */
@@ -44,15 +46,20 @@ public class HomeServlet extends HttpServlet {
 	}
 	
 	//priority : positive
-	public static String validateSentiment(String tweet, String[] pWords, String[] nWords){	
-		String result = "Neutral";
+	public static String validateSentiment(String tweet, String[] pWords, String[] nWords, String algorithm){	
+		/*String result = "Neutral";
 		for (int i = 0; i < nWords.length; i++) {
 			if (!nWords[i].equals("") && tweet.contains(nWords[i].toLowerCase())) result = "Negative";
 		}
 		for (int i = 0; i < pWords.length; i++) {
 			if (!pWords[i].equals("") && tweet.contains(pWords[i].toLowerCase())) result = "Positive"; 
 		}
-		return result;
+		return result;*/
+		if (algorithm.equals("BM")) {
+			return BoyerMoore.runBM(tweet, pWords, nWords);
+		} else {
+			return "KMP";
+		}
 	}
 	
 	public static void initDummyTweets(ArrayList<String> list){

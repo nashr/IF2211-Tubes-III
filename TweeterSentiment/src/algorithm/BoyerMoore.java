@@ -46,8 +46,17 @@ public class BoyerMoore {
 	/*
 	 * Run Boyer-Moore Algorithm for each sentiment, returning the category it is in: negative, neutral, positive
 	 */
-	public static String run(String tweet, String pos, String neg) {
-		
-		return "CIPARAPICAP";
+	public static String runBM(String tweet, String[] pos, String[] neg) {
+		for (int i = 0; i < pos.length; i++) {
+			if (!pos[i].equals("")) {
+				if (BoyerMooreMatch(tweet, pos[i].toLowerCase()) != -1) return "Positive";
+			}
+		}
+		for (int i = 0; i < neg.length; i++) {
+			if (!neg[i].equals("")) {
+				if (BoyerMooreMatch(tweet, neg[i].toLowerCase()) != -1) return "Negative";
+			}
+		}
+		return "Neutral";
 	}
 }
