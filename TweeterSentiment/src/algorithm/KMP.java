@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class KMP {
 	private static String SampleTweet="heiheiheihei @baharudinafif kapan-kapan lagi maenan gundu yuk";
-	private static String SamplePattern="baharudinafif";
+	private static String SamplePattern="bAhArUdINaFiF";
 
 	public static ArrayList<Integer> prefixFunction(String Pattern, String Tweet){
 		int k=0,q=0;
@@ -32,13 +32,16 @@ public class KMP {
 		return prefixDummy;
 	}
 	
-	public static int run(String tweet, String pattern){
+	public static void run(String tweet, String pattern){
 		KMP kmp = new KMP();
 		ArrayList<Integer> prefix=new ArrayList<Integer>();
 		prefix=kmp.prefixFunction(pattern,tweet);
 		
 		pattern="`"+pattern;
 		tweet="`"+tweet;
+		
+		pattern=pattern.toLowerCase();
+		tweet=tweet.toLowerCase();
 		
 		int n=tweet.length();
 		int m=pattern.length();
@@ -48,7 +51,7 @@ public class KMP {
 		boolean found=false;
 		
 		System.out.println(""+tweet+" "+n+" "+m);
-		while((i<=n)&& !found){
+		while((i<n)&& !found){
 			System.out.println(i+" "+j+" ");
 			while((j>0) && (pattern.charAt(j+1)!=tweet.charAt(i))){
 				j=prefix.get(j);
@@ -72,23 +75,8 @@ public class KMP {
 			idxAwal=-1;
 		}
 		System.out.println("Indeks Ketemu Awal ="+idxAwal);
-		return idxAwal;
 	}
 
-	public static String runKMP(String tweet, String[] pos, String[] neg) {
-		for (int i = 0; i < pos.length; i++) {
-			if (!pos[i].equals("")) {
-				if (run(tweet, pos[i].toLowerCase()) != -1) return "Positive";
-			}
-		}
-		for (int i = 0; i < neg.length; i++) {
-			if (!neg[i].equals("")) {
-				if (run(tweet, neg[i].toLowerCase()) != -1) return "Negative";
-			}
-		}
-		return "Neutral";
-	}
-	
 	/*public static void main(String args[]) {
 		KMP.run(SampleTweet,SamplePattern);	
 	}*/
